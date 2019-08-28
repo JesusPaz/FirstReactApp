@@ -4,6 +4,9 @@ import Home from '../components/Home/Home'
 import Users from '../components/User/Users'
 import UserInfo from '../components/User/UserInfo'
 import NotFound from '../components/NotFound'
+import UserInfo2 from '../components/User/UserInfo2'
+
+
 const routing = (
 
     <Router>
@@ -22,6 +25,7 @@ const routing = (
         </div>
         <Switch>
             <Route exact path = "/" component = {Home}/>
+            <Route path = "/userapi/:id" component = {UserInfo2}/>
             <Route path = "/user/:id/:name" component = {UserInfo}/>
             <Route path = "/user/:id" component = {UserInfo}/>
             <Route path = "/users" component = {Users}/>
