@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from '../../config/axios'
 
 class UserInfo2 extends Component {
   
@@ -18,6 +19,15 @@ class UserInfo2 extends Component {
         .then(user => this.setState({user}))
   }  
 
+  handleDel(){
+      let id = this.state.user.id
+      axios.delete('users/'+id).then(res => {
+          console.log(res)
+
+      })
+
+  }
+
   render() {
       let user = this.state.user
       
@@ -26,8 +36,8 @@ class UserInfo2 extends Component {
             <li>ID: {user.id}</li>
             <li>Email: {user.email}</li>
             <li>Username: {user.username}</li>
-            <li>Name: {user.name}
-            </li>
+            <li>Name: {user.name}</li>
+            <button className= "btn btn-danger" onClick={this.handleDel.bind(this)}> Eliminar </button>
         </ul> 
     );
   }
