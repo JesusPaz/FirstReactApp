@@ -5,6 +5,7 @@ import Users from '../components/User/Users'
 import UserInfo from '../components/User/UserInfo'
 import NotFound from '../components/NotFound'
 import UserInfo2 from '../components/User/UserInfo2'
+import Post from '../components/Post/Post'
 
 
 const routing = (
@@ -29,6 +30,7 @@ const routing = (
             <Route path = "/user/:id/:name" component = {UserInfo}/>
             <Route path = "/user/:id" component = {UserInfo}/>
             <Route path = "/users" component = {Users}/>
+            <Route path = "/post" component = {Post}/>
             <Route component={NotFound}/>
         </Switch>
     </Router>
